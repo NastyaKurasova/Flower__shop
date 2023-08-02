@@ -1,0 +1,317 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --index: calc(1vw + 1vh);
+    --transition: 1.5s cubic-bezier(.05, .5, 0, 0);
+ }
+
+
+body{
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-family: kamerik-3d;
+}
+
+/* МЕНЮ НАЧАЛО */
+/* вся верхняя хуита с меню */
+.header-top{
+    background-color:transparent;
+    color: white;
+    align-items: center;
+
+}
+/* здесь логотип меняем расположение  */
+.menu-body{
+    display: flex;
+    width: auto;
+    margin: 0;
+    position: absolute;
+    z-index: 1;
+
+}
+
+/* меню хоум-контакт  */
+ .menu-list{
+    background-color: transparent; 
+    list-style-type: none;
+    display: flex;
+    gap: 20px; 
+    padding-top: 26px;
+    padding-left: calc(50% - calc((var(--index) * -56) / 2 ));
+ }
+
+ /* Сами слова хоум-контакт */
+.menu-link{
+    font-family: kamerik-3d;
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+}
+
+.menu-body li a:hover{
+    font-family: merriweather-italic-3d;
+}
+/* МЕНЮ КОНЕЦ */
+
+
+/* Фон */
+.car{
+    perspective: 1000px;
+    overflow: hidden;
+}
+
+.car__container{
+    height: 100vh; 
+    min-height: 380px;
+    transform-style: preserve-3d;
+    transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+    will-change: transform;
+    transition: transform var(--transition) ;
+   
+}   
+
+.car__item{
+    position: absolute;
+    inset: -3vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.lay_1{
+    transform: translateZ(-55px) scale(1.06);
+}
+
+.lay_4{
+    transform: translateZ(80px) scale(.6);
+}
+
+.lay_1, .lay_2{
+    pointer-events: none;
+}
+
+
+.fog {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+}
+.fog::before,
+.fog::after,
+.fog div::before, 
+.fog div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-x;
+}
+.fog div::before, 
+.fog div::after    {
+    left: 100%;
+}
+.fog::before, 
+.fog div::before {
+    background-image: url("../photo/fog-1.png");
+    animation: fogmove 40s linear 0s infinite;
+}
+.fog::after, 
+.fog div::after {
+    background-image: url("../photo/fog-2.png");
+    animation: fogmove 50s linear 0s infinite;
+}
+
+@keyframes fogmove {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* Фон конец */
+
+.contactUs{
+    position: relative;
+    display: inline-block;
+}
+
+.box{
+    display: flex;
+    margin-top: 20px;
+}
+
+
+/* Начало формы с данными клиента */
+.contact__form{
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 35px rgba(255, 255, 255, 0.5);
+    padding: 10px;
+    margin-bottom: 24vh;
+}
+
+.contact__form h2{
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 900;
+}
+
+.formBox{
+    position: relative;
+    width: 100%;
+    padding: 10px;
+}
+
+.formBox .short{
+    display: flex;
+    gap: 20px;
+}
+
+.inputBox{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+.formBox .long .inputBox{
+    width: 100%;
+}
+
+.inputBox span{
+    font-family: merriweather-italic-3d;
+    color: black;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.inputBox input{
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid wheat;
+}
+
+.inputBox textarea{
+    padding: 10px;
+    font-size: 1.1em;
+    outline: none;
+    border: 1px solid wheat;
+    resize: none;
+    min-height: 220px;
+    margin-bottom: 5px;
+}
+
+.inputBox input[type="submit"]{
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #000000;
+    box-shadow: 0 5px 35px rgba(0, 0, 0, 0.3);
+    max-width: 120px;
+    font-family: merriweather-italic-3d;
+    font-weight: 300;
+    cursor: pointer;
+    padding: 14px 15px;
+    border-radius: 10px;
+}
+.inputBox input[type="submit"]:hover{
+    background-color: rgba(155, 207, 255, 0.2);
+    color: #fff;
+}
+
+
+.inputBox ::placeholder{
+    color: rgb(95, 95, 95);
+}
+/* Конец формы */
+
+/* Инфобокс */
+.contact__info{
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 5px 35px rgba(255, 255, 255, 0.5);
+    padding: 5px;
+    margin-bottom: 34vw;
+    margin-left: 2vh;
+    padding: 20px;
+}
+
+.contact__info h2{
+    text-align: center;
+    font-size: 1.5em;
+    color: rgba(0, 0, 0, 0.6);
+    padding-bottom: 20px;
+}
+
+.infoBox div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+/* иконки */
+.infoBox div span{
+    min-width: 40px;
+    height: 40px;
+    color:  rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    margin-left: 15px;
+
+}
+
+.infoBox div p{
+    font-size: 1.5em;
+    color:  rgba(0, 0, 0, 0.6);
+}
+/* Иконки соцсетей */
+.infoBox div a{
+    font-size: 1.5em;
+    text-decoration: none;
+    color:  rgba(0, 0, 0, 0.6);
+    
+}
+.infoBox div a:hover{
+    color:  rgba(0, 132, 255, 0.6);
+}
+
+.sci{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.sci li{
+    list-style: none;
+    margin-right: 15px;
+    
+}
+
+.sci li a{
+    color:  rgba(0, 0, 0, 0.6);
+    font-size: 2em;
+}
+
+.sci li a:hover{
+    color:  rgba(0, 132, 255, 0.6);
+}
+/* Конец инфобокса */
