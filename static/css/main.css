@@ -39,16 +39,16 @@ body{
     background-color: transparent; 
     list-style-type: none;
     display: flex;
-    gap: 20px; 
-    padding-top: 26px;
-    padding-left: calc(50% - calc((var(--index) * -54) / 2 ));
+    gap: 1vw; 
+    padding-top: 1.73vw;
+    padding-left: calc((var(--index) * 12) / 2 );
     
  }
 
  /* Сами слова хоум-контакт */
 .menu-link{
     font-family: kamerik-3d;
-    font-size: 20px;
+    font-size: calc(var(--index) * 1.2);
     text-decoration: none;
     color: white;
 }
@@ -67,7 +67,7 @@ body{
     background-repeat: no-repeat;
     position: absolute;
     left: calc(50% - calc((var(--index) * 10) / 2 ));
-    top: calc( var(--index) * 2);
+    top: calc( var(--index) * 4);
     z-index: 1;
 }
 
