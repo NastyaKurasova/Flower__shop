@@ -11,10 +11,6 @@
 	--transition: .75s cubic-bezier(.075, .5, 0, 1)
 }
 
-/* Скрываем Scrollbar */
-body {
-	scrollbar-width: none; /* Firefox */
-}
 body::-webkit-scrollbar { 
 	display: none; /* Safari and Chrome */
 }
@@ -31,7 +27,6 @@ body {
 }
 
 /* МЕНЮ НАЧАЛО */
-/* вся верхняя хуита с меню */
 .header-top{
     background-color:transparent;
     color: white;
@@ -39,7 +34,6 @@ body {
 
 }
 
-/* здесь логотип меняем расположение  */
 .menu-body{
     display: flex;
     width: auto;
