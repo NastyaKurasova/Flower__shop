@@ -41,17 +41,16 @@ body{
  .menu-list{
     background-color: transparent; 
     list-style-type: none;
-    display: flex;
-    position: fixed; /*чтобы меню не съезжало*/ 
-    gap: 20px; 
-    padding-top: 20px;
-    padding-left: calc(50% - calc((var(--index) * -32) / 2 ));
+    display: flex; 
+    gap: 1vw; 
+    padding-top: 1.73vw;
+    padding-left: calc((var(--index) * 12) / 2 );
  }
 
  /* Сами слова хоум-контакт */
 .menu-link{
     font-family: kamerik-3d;
-    font-size: 20px;
+    font-size: calc(var(--index) * 1.2);
     text-decoration: none;
     color: white;
 }
@@ -59,13 +58,15 @@ body{
 .menu-body li a:hover{
     font-family: merriweather-italic-3d;
 }
+
 /* МЕНЮ КОНЕЦ */
 
 
 /* Начало каталога */
+
 .section__title{
     margin-left: 45%;
-    padding-top: 3%;
+    padding-top: 8%;
     font-weight: 100;
 	text-transform: uppercase;
     font-family: kamerik-3d;
@@ -74,21 +75,22 @@ body{
 .catalog__nav{
     display: flex;
     justify-content: center;
-    padding-bottom: 20px;
+    padding-bottom: 1.3vw;
     list-style: none;
 }
 
 .catalog-nav__btn{
+    text-decoration: none;
     padding: 15px;
     border-color: rgba(255, 255, 255, 0.1);
     background-color: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
+    border-radius: 1.5vw;
     overflow: hidden;
     box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     display: inline-block;
     text-align: center;
-    min-width: 150px;
+    min-width: 32.6vw;
     font-family: Arial;
     font-weight: 900;
     color: white;
@@ -97,6 +99,7 @@ body{
 .catalog-nav__btn:hover{
     color: rgba(0, 0, 0, 0.6);   
 }
+
 /* Конец каталога */
 
 /* Начало товаров */
@@ -115,28 +118,36 @@ body{
     color: #ffffff;
     background-color:rgba(255, 255, 255, 0.2);
     width: calc(100% / 5);
-	margin-left: 2vh;
+	margin-left: 8vh;
+    flex-wrap: wrap;
 }
 
 /* картинка */
 .product__img{
     display: block;
     padding: 1vh;
-    width: 250px;
-	height: 300px;
+    width: 16.7vw;
+	height: 20vw;
 	background-position: center;
 	background-size: cover;
 }
 
 /* весь контейнер товара */
 .product{
-    padding: 20px;
+    padding: 1.3vw;
     justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product__content{
+    margin-bottom: 1.6vw;
+    flex-grow: 1;
 }
 
 .product__title{
     font-family: kamerik-3d;
-    font-weight: 900;
+    font-weight: 800;
     text-align: center;
 }
 
@@ -151,9 +162,9 @@ body{
 /* кнопки упаковки */
 .product__sizes{
     display: flex;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border-radius: 21px;
+    margin-top: 0.6vw;
+    margin-bottom: 1.3vw;
+    border-radius: 1.4vw;
     overflow: hidden;
     justify-content:space-around;
     box-shadow: 0px 2px 20px 0px rgba(0, 0, 0, 0.6);
@@ -186,7 +197,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    margin-bottom: 10px;
+    margin-bottom: 0.6vw;
 }
 
 /* кнопка заказать */
@@ -197,7 +208,7 @@ body{
     color: white;
     border-radius: 10em;
     border: rgba(255, 255, 255, 0.7) 3px solid;
-    padding: 5px;
+    padding: 0.3vw;
 }
 
 .product__btn a{
@@ -207,5 +218,16 @@ body{
 
 .product__btn a:hover{
     color: rgba(0, 0, 0, 0.6);
+}
+
+@media(max-width: 993px) and (min-width: 1200px)
+{
+    .product__size{
+        font-size: smaller;
+        font-weight: 100;
+    }
+    .product__price{
+        font-size: smaller;
+    }
 }
   
